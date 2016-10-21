@@ -46,7 +46,7 @@
 								@endif							
 								<span class="cateStyle">
 								@if($v->cate_pid==0)								
-									<a href="javascript:;" title="{{$v->cate_name}}">| {{$v->cate_name}} |</a>
+									<a href="javascript:;" title="{{$v->cate_name}}" style="cursor:default">| {{$v->cate_name}} |</a>
 								@else
 									@if($v->cate_id==$cate_id)
 										<span class="h4">{{$v->cate_name}}</span>

@@ -61,7 +61,7 @@
 								@endif							
 								<span class="cateStyle">
 								@if($v->cate_pid==0)								
-									<a href="jsvascript:;" title="{{$v->cate_name}}">| {{$v->cate_name}} |</a>
+									<a href="javascript:;" title="{{$v->cate_name}}" style="cursor:default">| {{$v->cate_name}} |</a>
 								@else
 								    <a href="{{url('c/'.$v->cate_id)}}" title="{{$v->cate_name}}">{{$v->cate_name}}</a>			
 								@endif									
