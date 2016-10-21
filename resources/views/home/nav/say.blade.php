@@ -32,7 +32,7 @@
 					</ul>
             			@else
 
-					<div class="h3">i a'm coming soon !</div>
+					<div class="h3">I'm coming !</div>
 
             			@endif
 
