@@ -89,7 +89,7 @@
 	            			@else
 	            				<div class="row info-content">	            			
 							<div class="col-md-8 col-sm-8 col-xs-10 text-center h3">
-								i 'am coming soon !
+								I'm coming !
 							</div>
 						</div>
 	            			@endif

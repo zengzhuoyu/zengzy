@@ -56,7 +56,7 @@
 	            			@else
 	            				<div class="row info-content">	            			
 							<div class="col-md-10 col-sm-10 col-xs-12 text-center h3">
-								i 'am coming soon !
+								I'm coming !
 							</div>
 						</div>
 	            			@endif
