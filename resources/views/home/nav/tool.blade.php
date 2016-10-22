@@ -36,7 +36,7 @@
 
 			<div class="col-md-1 text-center location">
 				<br>
-				<a href="" onclick="history.go(-1)"><code>返 回</code></a>
+				<a href="#" onclick="javascript:history.go(-1);"><code>返 回</code></a>
 			</div>			
 
 		</div>		
