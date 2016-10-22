@@ -15,7 +15,7 @@ class ConfigController extends CommonController
     //get.admin/config  全部配置项列表
     public function index()
     {
-        $data = Config::orderBy('conf_order','desc')->get();
+        $data = Config::orderBy('conf_order','desc')->orderBy('conf_id','desc')->get();
         foreach ($data as $k=>$v){
             switch ($v->conf_type){
                 case 'input':

@@ -50,4 +50,14 @@ class Category extends Model
         return $data;
        
     }
+
+    //原一级变成二级的情况：查出原一级分类下的所有二级分类,如果有,把它们变成新的二级分类
+    public function turnCate($data,$pid){
+
+        foreach($data as $v){
+            $v->cate_pid = $pid;
+            $v->update();                     
+        }
+        return;
+    }    
 }

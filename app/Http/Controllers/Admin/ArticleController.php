@@ -19,7 +19,7 @@ class ArticleController extends CommonController
     //admin/category：URI,调用的url地址
     //index()：Action(方法),访问的方法
     public function index(){
-        $data = Article::orderBy('art_order','desc')->paginate(7);
+        $data = Article::orderBy('art_order','desc')->orderBy('art_id','desc')->paginate(7);
 
         //遍历出所属分类
         $data = (new Category)->getCate($data);

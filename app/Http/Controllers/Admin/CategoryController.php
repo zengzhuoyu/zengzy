@@ -158,6 +158,13 @@ class CategoryController extends CommonController
         if($validator->passes()){
             $re = Category::where('cate_id',$cate_id)->update($input);
             if($re){
+
+                //原一级变成二级的情况：查出原一级分类下的所有二级分类,如果有,把它们变成新的二级分类
+                $data = Category::where('cate_pid',$cate_id)->get();
+                if($data){
+                    (new Category)->turnCate($data,$input['cate_pid']);                    
+                }
+
                 return redirect('admin/category');
             }else{
                 return back()->with('errors','分类信息更新失败，请稍后重试！');

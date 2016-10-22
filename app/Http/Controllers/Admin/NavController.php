@@ -15,7 +15,7 @@ class NavController extends CommonController
     //get.admin/nav  全部自定义导航列表
     public function index()
     {
-        $data = Nav::orderBy('nav_order','desc')->get();
+        $data = Nav::orderBy('nav_order','desc')->orderBy('nav_id','desc')->get();
         return view('admin/nav/index',compact('data'));
     }
 

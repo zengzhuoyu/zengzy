@@ -19,7 +19,7 @@ class SayController extends CommonController
     //admin/category：URI,调用的url地址
     //index()：Action(方法),访问的方法
     public function index(){
-        $data = Say::orderBy('say_order','desc')->paginate(7);
+        $data = Say::orderBy('say_order','desc')->orderBy('say_id','desc')->paginate(7);
         return view('admin/say/index',compact('data'));
     }
 
