@@ -65,7 +65,7 @@
                     <tr>
                         <th>缩略图：</th>
                         <td>
-                            <input type="text" size="50" name="art_thumb" value="{{$field->art_thumb}}">
+                            <input type="text" size="50" name="art_thumb" value="{{$field->art_thumb}}" placeholder="350 * 220">
                             <input id="file_upload" name="file_upload" type="file" multiple="true">
                             <script src="{{asset('resources/org/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
                             <link rel="stylesheet" type="text/css" href="{{asset('resources/org/uploadify/uploadify.css')}}">
@@ -83,6 +83,7 @@
                                         'onUploadSuccess' : function(file, data, response) {
                                             $('input[name=art_thumb]').val(data);
                                             $('#art_thumb_img').attr('src','/'+data);
+                                            $('.clearThumb').html('[ 清除图片 ]');
                                         }
                                     });
                                 });
@@ -95,11 +96,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <td>                        
-                        @if(!empty($field->art_thumb))                        
-                            <img alt="" id="art_thumb_img" style="max-width: 350px; max-height:100px;" src="/{{$field->art_thumb}}">
-                        @endif
+                        <th>
+                        	<a class="clearThumb" href="javascript:;">
+			@if(!empty($field->art_thumb))      
+			[ 清除图片 ]
+			@endif                   		
+                        	</a>                        	
+                        </th>
+                        <td>                                                
+                            <img alt="" id="art_thumb_img" style="max-width: 350px; max-height:100px;" src="/{{$field->art_thumb}}" onerror="javascript:this.src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image'">
                         </td>                        
                     </tr>                    
                     <tr>
@@ -144,4 +149,15 @@
         </form>
     </div>
 
+<script>
+	
+	//清除图片
+	$(".clearThumb").click(function(){
+		var art_thumb = $("input[name='art_thumb']");
+		art_thumb.val('');
+		$(this).html('');
+		$('#art_thumb_img').attr('src','');
+	});	
+
+</script>
 @endsection
