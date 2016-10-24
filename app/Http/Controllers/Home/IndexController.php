@@ -28,7 +28,7 @@ class IndexController extends CommonController
         $categorys = (new Category)->treeii();
 
         //说说
-        $say = Say::orderBy('say_order','desc')->first();
+        $say = Say::orderBy('say_order','desc')->orderBy('say_id','desc')->first();
 
         //读取所有文章
         $article = Article::where('art_status',1)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_id','desc')->paginate(7);
@@ -83,14 +83,14 @@ class IndexController extends CommonController
 
     public function tool(){
 
-        $tool = Nav::where('nav_status',1)->orderBy('nav_order','desc')->get();
+        $tool = Nav::where('nav_status',1)->orderBy('nav_order','desc')->orderBy('nav_id','desc')->get();
 
         return view('home/nav/tool',compact('tool'));
     }
 
     public function say(){
 
-        $say = Say::orderBy('say_order','desc')->paginate(7);
+        $say = Say::orderBy('say_order','desc')->orderBy('say_id','desc')->paginate(7);
 
         return view('home/nav/say',compact('say'));
     }    
