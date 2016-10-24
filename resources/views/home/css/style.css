@@ -49,6 +49,11 @@ body {
 	font-size: 13px;
 }
 
+.art_img{
+	width:80%;
+	height:80%;
+}
+
 /*没有小于768px，是因为Bootstrap3以移动端优先设计*/
 @media (max-width: 768px) {
 	/*mine*/
