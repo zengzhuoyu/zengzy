@@ -55,13 +55,17 @@ body {
 /*	.hr{
 		display:none;
 	}*/
+/*	.art_img{
+		width:100%;
+		height:100%;
+	}	*/
 }
 
 @media (max-width: 992px) {
 
 	.art_img{
-		width:100%;
-		height:100%;
+		width:60%;
+		height:60%;
 	}	
 }
 
