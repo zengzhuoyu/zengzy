@@ -46,6 +46,9 @@ class IndexController extends CommonController
         
         $where = isset($input['where']) ? $input['where'] : '';
 
+        //查看次数自增
+        Category::where('cate_id',$cate_id)->increment('cate_view');
+        
         //读取一级分类
         $categorys = (new Category)->treeii();
 
