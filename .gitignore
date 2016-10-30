@@ -6,12 +6,11 @@ Homestead.json
 .env
 
 
-/uploads/
-
 /storage/
 
 /config/web.php
 
-/ueditor/
+/public/uploads/
 
+/public/ueditor/
 

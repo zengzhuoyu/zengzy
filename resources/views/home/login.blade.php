@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>Purein - 日记登录</title>
-    <link rel="Shortcut Icon" href="{{asset('resources/views/home/img/antlers.jpg')}}" type="image/ico">    
-    <link rel="stylesheet" href="{{asset('resources/views/home/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('resources/views/home/css/style.css')}}">
-    <script src="{{asset('resources/views/home/js/jquery.min.js')}}"></script>
-    <script src="{{asset('resources/views/home/js/bootstrap.min.js')}}"></script>  
+    <link rel="Shortcut Icon" href="{{asset('style/home/img/antlers.jpg')}}" type="image/ico">    
+    <link rel="stylesheet" href="{{asset('style/home/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('style/home/css/style.css')}}">
+    <script src="{{asset('style/home/js/jquery.min.js')}}"></script>
+    <script src="{{asset('style/home/js/bootstrap.min.js')}}"></script>  
 </head>
 <body>
 

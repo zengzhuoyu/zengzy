@@ -27,7 +27,7 @@
 
 			<div class="col-md-3 text-center">
 				<div class="myInfo">
-			                    <img src="{{asset('resources/views/home/img/antlers.jpg')}}" class="img-thumbnail" alt="{{Config::get('web.personal_alt')}}">
+			                    <img src="{{asset('style/home/img/antlers.jpg')}}" class="img-thumbnail" alt="{{Config::get('web.personal_alt')}}">
 					{!! Config::get('web.personal_info') !!}
 					<div class="social-share text-center">
 					</div>	

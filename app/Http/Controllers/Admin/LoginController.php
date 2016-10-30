@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Model\User;
 
-require_once 'resources/org/code/Code.class.php';
+require_once 'org/code/Code.class.php';
 
 class LoginController extends CommonController
 {

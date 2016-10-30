@@ -18,7 +18,7 @@ class CommonController extends Controller
         if($file -> isValid()){//检验一下上传的文件是否有效.
             $entension = $file -> getClientOriginalExtension(); //获取上传文件的后缀
             $newName = date('YmdHis').mt_rand(100,999).'.'.$entension;
-            $path = $file -> move(base_path().'/uploads',$newName);//laravel的base_path() 根目录
+            $path = $file -> move('uploads/',$newName);//laravel的base_path() 根目录
             $filepath = 'uploads/'.$newName;
             return $filepath;
         }
