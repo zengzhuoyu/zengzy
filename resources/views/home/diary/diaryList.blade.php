@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('head')
-	<title>Purein - 日 记</title>
+	<title>Purein - 私密文章</title>
 @endsection
 
 @section('content')
