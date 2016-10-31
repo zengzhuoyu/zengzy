@@ -80,6 +80,7 @@
                                         'onUploadSuccess' : function(file, data, response) {
                                             $('input[name=art_thumb]').val(data);
                                             $('#art_thumb_img').attr('src','/'+data);
+                                            $('.clearThumb').html('[ 清除图片 ]');                                            
                                         }
                                     });
                                 });
@@ -92,7 +93,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th></th>
+                        <th>
+                            <a class="clearThumb" href="javascript:;">                         
+                            </a>                            
+                        </th>
                         <td>
                             <img src="" alt="" id="art_thumb_img" style="max-width: 350px; max-height:100px;">
                         </td>
@@ -138,5 +142,15 @@
             </table>
         </form>
     </div>
+<script>
+    
+    //清除图片
+    $(".clearThumb").click(function(){
+        var art_thumb = $("input[name='art_thumb']");
+        art_thumb.val('');
+        $(this).html('');
+        $('#art_thumb_img').attr('src','');
+    }); 
 
+</script>
 @endsection
