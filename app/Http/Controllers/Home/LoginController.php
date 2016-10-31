@@ -30,7 +30,7 @@ class LoginController extends Controller
 
             session(['home_user'=>$user]);
 
-            return redirect('d');
+            return redirect('m');
 
         }else{
             return view('home/login');    	

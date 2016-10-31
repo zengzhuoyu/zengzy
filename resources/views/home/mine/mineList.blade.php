@@ -39,7 +39,7 @@
 								<div class="col-md-10 col-sm-10 col-xs-10">
 								@endif									
 								
-									<h4><a href="{{url('d/'.$v->art_id)}}">{{$v->art_title}}</a></h4>
+									<h4><a href="{{url('m/'.$v->art_id)}}">{{$v->art_title}}</a></h4>
 									<p class="hidden-xs">{{$v->art_description}}</p>
 									<p>{{$v->art_author}} &nbsp;{{$v->art_updatetime}}</p>
 								</div>	

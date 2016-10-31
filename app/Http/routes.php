@@ -94,7 +94,7 @@ Route::get('/st', 'Home\IndexController@store');//store
 Route::any('/login', 'Home\LoginController@login');//diary登录页面
 Route::group(['middleware'=>['home.login'],'namespace'=>'Home'],function(){
 
-	Route::get('d', 'IndexController@diaryList');//diary列表
-	Route::get('d/{art_id}', 'IndexController@diary');//diary详情
+	Route::get('m', 'IndexController@mineList');//diary列表
+	Route::get('m/{art_id}', 'IndexController@mine');//diary详情
 });
 

@@ -105,7 +105,7 @@ class IndexController extends CommonController
         return view('home/nav/store',compact('store'));
     }        
 
-    public function diaryList(){
+    public function mineList(){
 
         $input = Input::all();
         
@@ -118,10 +118,10 @@ class IndexController extends CommonController
         //文章时间格式化
         $article = (new Article)->clearTime($article,'art_updatetime',2,8,true);  
 
-        return view('home/diary/diaryList',compact('where','page','article'));
+        return view('home/mine/mineList',compact('where','page','article'));
     }
 
-    public function diary($art_id){
+    public function mine($art_id){
         
         //查看次数自增
         Article::where('art_id',$art_id)->increment('art_view');
@@ -137,7 +137,7 @@ class IndexController extends CommonController
 
         $data = Article::where('art_status',0)->where('cate_id',$field -> cate_id)->orderBy('art_id','desc')->take(6)->get();      
 
-        return view('home/diary/diary',compact('field','cate_name','article','data'));
+        return view('home/mine/mine',compact('field','cate_name','article','data'));
 
     }        
 }
