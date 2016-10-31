@@ -80,6 +80,9 @@ class IndexController extends CommonController
 
         $data = Article::where('art_status',1)->where('cate_id',$field -> cate_id)->orderBy('art_id','desc')->take(6)->get();   
 
+        //去除相关文章中的自己
+        $data = (new Article)->delMyself($data,$art_id);                
+
         return view('home/article',compact('field','cate_name','article','data'));
 
     }    
@@ -136,6 +139,9 @@ class IndexController extends CommonController
         $article['next'] = Article::where('art_status',0)->where('art_id','>',$art_id)->orderBy('art_id','asc')->first();
 
         $data = Article::where('art_status',0)->where('cate_id',$field -> cate_id)->orderBy('art_id','desc')->take(6)->get();      
+        
+        //去除相关文章中的自己
+        $data = (new Article)->delMyself($data,$art_id);
 
         return view('home/mine/mine',compact('field','cate_name','article','data'));
 

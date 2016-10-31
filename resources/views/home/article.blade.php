@@ -71,7 +71,7 @@
               <div>
                 <div class="h4">相关文章 : </div>
                 <ul class="list-inline">
-                @if(count($data) <= 1)
+                @if(count($data) == 0)
                     <li>暂无相关文章</li>
                 @else
                     @foreach($data as $d)

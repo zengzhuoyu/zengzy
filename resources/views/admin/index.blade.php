@@ -10,7 +10,7 @@
 				<li><a href="{{url('admin/info')}}" target="main">系统信息</a></li>			
 				<li><a href="{{url('/')}}" target="_blank">前台首页</a></li>
 				@if(session('changePass'))				
-				<li><a href="{{url('d')}}" target="_blank">私密文章</a></li>
+				<li><a href="{{url('m')}}" target="_blank">私密文章</a></li>
             			@endif				
 			</ul>
 		</div>

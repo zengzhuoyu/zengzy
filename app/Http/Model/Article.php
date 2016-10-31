@@ -32,4 +32,17 @@ class Article extends Model
         }
         return;
     }
+
+
+    //去除相关文章中的自己
+    public function delMyself($data,$art_id){
+
+        foreach($data as $k => $v) {
+                if($v['art_id'] == $art_id){
+                    unset($data[$k]);                    
+                }
+        }        
+
+        return $data;
+    }
 }
