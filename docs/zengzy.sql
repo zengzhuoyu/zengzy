@@ -66,3 +66,10 @@ CREATE TABLE `zy_user` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='管理员';
 
+/*前台私密文章查看权限字段增加、后台登录权限字段增加*/
+ALTER TABLE `zy_user`
+ADD COLUMN `h_status`  tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '前台私密文章登录权限' AFTER `user_pass`,
+ADD COLUMN `a_status`  tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '后台登录权限' AFTER `h_status`;
+
+
+

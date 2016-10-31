@@ -31,10 +31,15 @@ class LoginController extends CommonController
     		if(!$user || Crypt::decrypt($user->user_pass) != $input['user_pass']){
     			return back() -> with('msg','用户名 或者 密码错误！');
     		}
+
+                      if($user->a_status == 0){
+                                return back() -> with('msg','抱歉！您没有权限！');
+                      }
+
                       if($user->user_name == 'zengzy'){
                         session(['changePass'=>$user]);
                       }
-    		session(['user'=>$user]);
+    		session(['admin_user'=>$user]);
     		
     		return redirect('admin/index');
     	}else{

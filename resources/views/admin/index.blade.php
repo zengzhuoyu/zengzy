@@ -10,14 +10,15 @@
 				<li><a href="{{url('admin/info')}}" target="main">系统信息</a></li>			
 				<li><a href="{{url('/')}}" target="_blank">前台首页</a></li>
 				@if(session('changePass'))				
-				<li><a href="{{url('d')}}" target="_blank">前台日记</a></li>
+				<li><a href="{{url('d')}}" target="_blank">私密文章</a></li>
             			@endif				
 			</ul>
 		</div>
 		<div class="top_right">
 			<ul>
+				@if(session('changePass'))		
+				<li><a href="{{url('admin/userList')}}" target="main">用户列表</a></li>					
 				<li><a href="{{url('admin/user')}}" target="main">新增用户</a></li>
-				@if(session('changePass'))
 				<li><a href="{{url('admin/pass')}}" target="main">修改密码</a></li>			
             			@endif				
 				<li><a href="{{url('admin/quit')}}">退出</a></li>

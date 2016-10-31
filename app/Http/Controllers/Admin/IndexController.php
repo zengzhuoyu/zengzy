@@ -110,8 +110,70 @@ class IndexController extends CommonController
 	                return back()->withErrors($validator);
 	            }
 	        }else{
-	            return view('admin/user');
+	            return view('admin/user/user');
 	        }
 
 	}	
+
+	//用户列表
+	public function userList(){
+
+	        $data = User::paginate(7);
+
+	        return view('admin/user/index',compact('data'));		
+	}
+
+	//修改前台权限状态
+	public function changeHomeStatus(){
+	    $input = Input::all();
+	    $user = User::find($input['user_id']);        
+	    $user->h_status = $input['h_status'] == 0 ? 1: 0;
+	    $text = $input['h_status'] == 0 ? '关闭': '打开';        
+
+	    $re = $user->update();
+
+	    if($re){
+
+	        $data = [
+	            'status' => 0,
+	            'msg' => '状态更新成功！',
+	            'text' => $text,
+	            'statusVal' => $user->h_status,
+	        ];
+	    }else{
+	        $data = [
+	            'status' => 1,
+	            'msg' => '状态更新失败，请稍后重试！',
+	        ];
+	    }
+
+	    return $data;
+	}	
+
+	//修改后台权限状态
+	public function changeAdminStatus(){
+	    $input = Input::all();
+	    $user = User::find($input['user_id']);        
+	    $user->a_status = $input['a_status'] == 0 ? 1: 0;
+	    $text = $input['a_status'] == 0 ? '关闭': '打开';        
+
+	    $re = $user->update();
+
+	    if($re){
+
+	        $data = [
+	            'status' => 0,
+	            'msg' => '状态更新成功！',
+	            'text' => $text,
+	            'statusVal' => $user->a_status,
+	        ];
+	    }else{
+	        $data = [
+	            'status' => 1,
+	            'msg' => '状态更新失败，请稍后重试！',
+	        ];
+	    }
+
+	    return $data;
+	}		
 }

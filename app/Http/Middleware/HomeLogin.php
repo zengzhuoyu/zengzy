@@ -15,7 +15,7 @@ class HomeLogin
      */
     public function handle($request, Closure $next)
     {
-        if(!session('zengzy')){
+        if(!session('home_user')){
             return redirect('login');
         }
         return $next($request);

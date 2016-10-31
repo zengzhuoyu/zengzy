@@ -20,11 +20,15 @@ class LoginController extends Controller
             $user_name = $input['user_name'];
 
             $user = User::where('user_name',$input['user_name'])->first();
-            if($user_name != 'zengzy' || Crypt::decrypt($user->user_pass) != $input['user_pass']){
+            if(Crypt::decrypt($user->user_pass) != $input['user_pass']){
                 return back() -> with('msg','用户名 或者 密码错误！');
             }
 
-            session(['zengzy'=>$user]);
+            if($user->h_status == 0){
+                return back() -> with('msg','抱歉！您没有权限！');
+            }
+
+            session(['home_user'=>$user]);
 
             return redirect('d');
 

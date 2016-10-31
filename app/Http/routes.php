@@ -31,10 +31,19 @@ Route::group(['middleware'=>['admin.login'],'prefix'=>'admin','namespace'=>'Admi
 	Route::get('quit','IndexController@quit');
 
 	//后台首页修改密码
-	Route::any('pass','IndexController@pass');	
+	Route::any('pass','IndexController@pass');
 
 	//新增用户
 	Route::any('user','IndexController@user');
+
+	//用户列表
+	Route::any('userList','IndexController@userList');
+
+	//修改前台权限状态
+	Route::post('user/changeHomeStatus', 'IndexController@changeHomeStatus');
+
+	//修改后台权限状态
+	Route::post('user/changeAdminStatus', 'IndexController@changeAdminStatus');
 
 	//文章分类：资源路由
 	Route::resource('category','CategoryController');	
