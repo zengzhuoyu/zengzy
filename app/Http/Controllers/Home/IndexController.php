@@ -31,7 +31,7 @@ class IndexController extends CommonController
         $say = Say::orderBy('say_order','desc')->orderBy('say_id','desc')->first();
 
         //读取所有文章
-        $article = Article::where('art_status',1)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_updatetime','desc')->paginate(7);
+        $article = Article::where('art_status',1)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_id','desc')->paginate(7);
         //文章时间格式化
         $article = (new Article)->clearTime($article,'art_updatetime',2,8,true);     
 
@@ -53,7 +53,7 @@ class IndexController extends CommonController
         $categorys = (new Category)->treeii();
 
         //读取所有该一级分类下的文章
-        $article = Article::where('cate_id',$cate_id)->where('art_status',1)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_updatetime','desc')->paginate(7);
+        $article = Article::where('cate_id',$cate_id)->where('art_status',1)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_id','desc')->paginate(7);
         //文章时间格式化
         $article = (new Article)->clearTime($article,'art_updatetime',2,8,true);
 
@@ -117,7 +117,7 @@ class IndexController extends CommonController
         $where = isset($input['where']) ? $input['where'] : '';
 
         //读取所有文章
-        $article = Article::where('art_status',0)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_updatetime','desc')->paginate(7);
+        $article = Article::where('art_status',0)->where('art_title','like','%'.$where.'%')->orderBy('art_order','desc')->orderBy('art_id','desc')->paginate(7);
         //文章时间格式化
         $article = (new Article)->clearTime($article,'art_updatetime',2,8,true);  
 
